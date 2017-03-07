@@ -1,0 +1,105 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties":{
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "This is the instruction text",
+      "translatable": true
+    },
+    "_isVisibleBeforeCompletion": {
+      "type":"boolean",
+      "required":true,
+      "default": true,
+      "title": "Show before assessment completion",
+      "inputType": {"type": "Boolean", "options": [true, false]},
+      "validators": [],
+      "help": "If set to 'false', the image will be hidden until all assessments are completed."
+    },
+    "_graphic": {
+      "type":"object",
+      "required":true,
+      "title": "Graphic",
+      "properties":{
+        "alt": {
+          "type":"string",
+          "required":false,
+          "default": "",
+          "title": "Alternative Text",
+          "inputType": "Text",
+          "validators": [],
+          "help": "The alternative text for this image.",
+          "translatable": true
+        },
+        "_src": {
+          "type":"string",
+          "required":false,
+          "default": "",
+          "inputType": "Asset:image",
+          "validators": [],
+          "help": "The image for the component before the assessments are completed."
+        }
+      }
+    },
+    "_bands": {
+      "type":"array",
+      "required":true,
+      "title": "Bands",
+      "items": {
+        "type":"object",
+        "required":true,
+        "properties":{
+          "_score": {
+            "type":"number",
+            "required":false,
+            "title": "Score",
+            "inputType": "Number",
+            "validators": ["number"],
+            "help": "Enter a value representing the raw score or percentage for the start of the range."
+          },
+          "alt": {
+            "type":"string",
+            "required":false,
+            "default": "",
+            "title": "Alternative Text",
+            "inputType": "Text",
+            "validators": [],
+            "help": "The alternative text for this image.",
+            "translatable": true
+          },
+          "_src": {
+            "type":"string",
+            "required":true,
+            "default": "",
+            "inputType": "Asset:image",
+            "validators": ["required"],
+            "help": "The image for which will be shown with this bands score."
+          }
+        }
+      }
+    }
+  }
+}

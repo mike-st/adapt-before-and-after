@@ -1,0 +1,39 @@
+    {
+        "_id":"c-30",
+        "_parentId":"b-15",
+        "_type":"component",
+        "_component":"results-graphic",
+        "_classes":"",
+        "_layout":"left",
+        "title":"Here is a results-graphic object",
+        "displayTitle":"",
+        "body":"",
+        "instruction":"",
+        "_isVisibleBeforeCompletion": true,
+        "_graphic": {
+            "alt": "alt text",
+            "_src": "http://cdn.lipstiq.com/wp-content/uploads/2013/07/minions-film.jpg"
+        },
+        "_bands": [
+          {
+            "_score": 0,
+            "_graphic": "",
+            "alt": "alt text"
+          },
+          {
+            "_score": 25,
+            "_graphic": "",
+            "alt": "alt text"
+          },
+          {
+            "_score": 50,
+            "_graphic": "",
+            "alt": "alt text"
+          },
+          {
+            "_score": 75,
+            "_graphic": "",
+            "alt": "alt text"
+          }
+        ]
+    }

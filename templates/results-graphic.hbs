@@ -1,0 +1,6 @@
+<div class="results-graphic-inner component-inner" role="region" aria-label="{{_globals._components._graphic.ariaRegion}}">
+    {{> component this}}
+    <div class="results-graphic-widget component-widget">
+      <img src="{{_graphic._src}}" {{#if _graphic.alt}} aria-label="{{_graphic.alt}}" tabindex="0"{{else}} class="a11y-ignore" aria-hidden="true" tabindex="-1"{{/if}}/>
+    </div>
+</div>
