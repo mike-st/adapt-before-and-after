@@ -4,7 +4,7 @@
 
 ## Settings Overview
 
-The attributes listed below are used in *components.json* to configure **Results Graphic**, and are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-results-graphic/blob/master/example.json). Visit the [**Graphic** wiki](https://github.com/deltanet/adapt-results-graphic/wiki) for more information about how they appear in the [authoring tool](https://github.com/adaptlearning/adapt_authoring/wiki).
+The attributes listed below are used in *components.json* to configure **Results Graphic**, and are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-results-graphic/blob/master/example.json).
 
 ### Attributes
 
@@ -19,15 +19,21 @@ The attributes listed below are used in *components.json* to configure **Results
 **instruction** (string): This optional text appears above the component. It is frequently used to
 guide the learner’s interaction with the component.  
 
-**_graphic** (object): The image that constitutes the component. It contains values for **alt**, **large**, and **small**.
+**_isVisibleBeforeCompletion** (boolean): Determines whether this component will be visible as the learner enters the assessment article or if it will be displayed only after the learner completes all question components. Acceptable values are `true` or `false`. The default is `false`.
+
+**_graphic** (object): The image that constitutes the component. It contains values for **alt**, and **_src**.
 
 >**alt** (string): This text becomes the image’s `alt` attribute.
 
->**large** (string): File name (including path) of the image used with large device width. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).  
+>**_src** (string): File name (including path) of the image used. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).  
 
->**small** (string): File name (including path) of the image used with small device width. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).  
+**_bands** (object array): Multiple items may be created. Each item represents the feedback and opportunity to retry for the appropriate range of scores. **_bands** contains values for **_score**, **feedback**, **_allowRetry** and **_classes**.
 
->**attribution** (string): Optional text to be displayed as an [attribution](https://wiki.creativecommons.org/Best_practices_for_attribution). By default it is displayed below the image. Adjust positioning by modifying CSS. Text can contain HTML tags, e.g., `Copyright © 2015 by <b>Lukasz 'Severiaan' Grela</b>`  
+>**_score** (number):  This numeric value represents the raw score or percentile (as determined by the configuration of [adapt-contrib-assessment](https://github.com/adaptlearning/adapt-contrib-assessment)) that indicates the low end or start of the range. The range continues to the next highest **_score** of another band.
+
+>**_graphic** (string): File name (including path) of the image used. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).  
+
+>**alt** (string): This text becomes the image’s `alt` attribute.
 
 ## Accessibility
 + Remember to include an **alt** attribute for all your images. Screen readers will read aloud alt text content, so leave the alt text empty (`"alt": ""`) if the image does not contribute significant course content.  
