@@ -58,6 +58,7 @@
           "type":"string",
           "required":false,
           "default": "",
+          "title": "Asset",
           "inputType": "Asset:image",
           "validators": [],
           "help": "The image for the component before the assessments are completed."
@@ -94,6 +95,7 @@
             "type":"string",
             "required":true,
             "default": "",
+            "title": "Asset",
             "inputType": "Asset:image",
             "validators": ["required"],
             "help": "The image for which will be shown with this bands score."

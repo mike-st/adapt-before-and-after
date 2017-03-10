@@ -106,20 +106,14 @@ define(function(require) {
         },
 
         setFeedback: function() {
-
             var completionBody = this.model.get("_completionBody");
             var feedbackBand = this.getFeedbackBand();
 
             var state = this.model.get("_state");
             state.feedbackBand = feedbackBand;
-            state.graphic = feedbackBand._graphic;
-
-            //completionBody = this.stringReplace(completionBody, state);
-
-            //this.model.set("body", completionBody);
+            state.graphic = feedbackBand._src;
 
             this.$('.results-graphic-widget img').attr('src', state.graphic);
-
         },
 
         getFeedbackBand: function() {
@@ -133,13 +127,11 @@ define(function(require) {
                     return bands[i];
                 }
             }
-
             return "";
         },
 
         onRemove: function() {
             this.removeEventListeners();
-
             ComponentView.prototype.remove.apply(this, arguments);
         }
 
