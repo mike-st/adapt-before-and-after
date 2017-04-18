@@ -2,6 +2,8 @@
 
 **Results Graphic** is a *presentation component* for the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  
 
+This component allows an image to be displayed according to the course score.
+
 ## Settings Overview
 
 The attributes listed below are used in *components.json* to configure **Results Graphic**, and are properly formatted as JSON in [*example.json*](https://github.com/deltanet/adapt-results-graphic/blob/master/example.json).
@@ -27,11 +29,11 @@ guide the learner’s interaction with the component.
 
 >**_src** (string): File name (including path) of the image used. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).  
 
-**_bands** (object array): Multiple items may be created. Each item represents the feedback and opportunity to retry for the appropriate range of scores. **_bands** contains values for **_score**, **feedback**, **_allowRetry** and **_classes**.
+**_bands** (object array): Multiple items may be created. Each item represents the image for the appropriate range of scores. **_bands** contains values for **_score**, **_graphic** and **alt**.
 
 >**_score** (number):  This numeric value represents the raw score or percentile (as determined by the configuration of [adapt-contrib-assessment](https://github.com/adaptlearning/adapt-contrib-assessment)) that indicates the low end or start of the range. The range continues to the next highest **_score** of another band.
 
->**_graphic** (string): File name (including path) of the image used. Path should be relative to the *src* folder (e.g., *course/en/images/origami-menu-two.jpg*).  
+>**_graphic** (string): File name (including path) of the image used. Path should be relative to the *src* folder.  
 
 >**alt** (string): This text becomes the image’s `alt` attribute.
 
@@ -45,7 +47,7 @@ guide the learner’s interaction with the component.
 No known limitations.  
 
 ----------------------------
-**Version number:**  2.0.1   <a href="https://community.adaptlearning.org/" target="_blank"><img src="https://github.com/adaptlearning/documentation/blob/master/04_wiki_assets/plug-ins/images/adapt-logo-mrgn-lft.jpg" alt="adapt learning logo" align="right"></a>
+**Version number:**  2.0.1  
 **Framework versions:** 2.0  
 **Author / maintainer:** DeltaNet [contributors](https://github.com/deltanet/adapt-results-graphic/graphs/contributors)   
 **Accessibility support:** WAI AA   
