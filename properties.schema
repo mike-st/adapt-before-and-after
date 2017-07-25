@@ -27,17 +27,17 @@
       "default": "",
       "inputType": "Text",
       "validators": [],
-      "help": "This is the instruction text",
+      "help": "This is the instruction text.",
       "translatable": true
     },
     "_isVisibleBeforeCompletion": {
       "type":"boolean",
-      "required":true,
+      "required": true,
       "default": true,
       "title": "Show before assessment completion",
-      "inputType": {"type": "Boolean", "options": [true, false]},
+      "inputType": "Checkbox",
       "validators": [],
-      "help": "If set to 'false', the image will be hidden until all assessments are completed."
+      "help": "If disabled, the image will be hidden until all assessments are completed."
     },
     "_graphic": {
       "type":"object",
@@ -46,7 +46,7 @@
       "properties":{
         "alt": {
           "type":"string",
-          "required":false,
+          "required": false,
           "default": "",
           "title": "Alternative Text",
           "inputType": "Text",
@@ -56,7 +56,7 @@
         },
         "_src": {
           "type":"string",
-          "required":false,
+          "required": false,
           "default": "",
           "title": "Asset",
           "inputType": "Asset:image",
@@ -67,15 +67,15 @@
     },
     "_bands": {
       "type":"array",
-      "required":true,
+      "required": true,
       "title": "Bands",
       "items": {
         "type":"object",
-        "required":true,
+        "required": true,
         "properties":{
           "_score": {
             "type":"number",
-            "required":false,
+            "required": false,
             "title": "Score",
             "inputType": "Number",
             "validators": ["number"],
@@ -83,7 +83,7 @@
           },
           "alt": {
             "type":"string",
-            "required":false,
+            "required": false,
             "default": "",
             "title": "Alternative Text",
             "inputType": "Text",
@@ -93,7 +93,7 @@
           },
           "_src": {
             "type":"string",
-            "required":true,
+            "required": true,
             "default": "",
             "title": "Asset",
             "inputType": "Asset:image",
