@@ -2,7 +2,7 @@
 
 **Results Graphic** is a *presentation component* for the [Adapt framework](https://github.com/adaptlearning/adapt_framework).  
 
-This component allows an image to be displayed according to the course score.
+This component allows an image to be displayed based on the score for a specific assessment or the entire course assessment score.
 
 ## Settings Overview
 
@@ -20,6 +20,8 @@ The attributes listed below are used in *components.json* to configure **Results
 
 **instruction** (string): This optional text appears above the component. It is frequently used to
 guide the learner’s interaction with the component.  
+
+**_assessmentId** (string): This value must match the [`_id` of the assessment](https://github.com/adaptlearning/adapt-contrib-assessment#attributes) for which results should be displayed.  
 
 **_isVisibleBeforeCompletion** (boolean): Determines whether this component will be visible as the learner enters the assessment article or if it will be displayed only after the learner completes all question components. Acceptable values are `true` or `false`. The default is `false`.
 
@@ -47,7 +49,7 @@ guide the learner’s interaction with the component.
 No known limitations.  
 
 ----------------------------
-**Version number:**  2.0.2  
+**Version number:**  2.1.0  
 **Framework versions:** 2.0  
 **Author / maintainer:** DeltaNet [contributors](https://github.com/deltanet/adapt-results-graphic/graphs/contributors)   
 **Accessibility support:** WAI AA   
