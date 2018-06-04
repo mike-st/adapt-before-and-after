@@ -226,7 +226,6 @@ define([
 
             this.model.set("graphic", state.graphic);
             this.model.set("alt", state.alt);
-            //this.$('.results-graphic-widget img').attr('src', state.graphic);
         },
 
         getFeedbackBand: function() {
