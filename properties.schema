@@ -39,6 +39,15 @@
       "validators": [],
       "help": "If disabled, the image will be hidden until all assessments are completed."
     },
+    "_assessmentId": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Assessment Name",
+      "inputType": "Text",
+      "validators": [],
+      "help": "This is the unique name of the assessment for which results should be displayed. If you only have one assessment or you wish to show results for all assessments you can leave this blank."
+    },
     "_graphic": {
       "type":"object",
       "required":true,

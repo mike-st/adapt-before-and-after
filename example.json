@@ -10,9 +10,10 @@
         "body":"",
         "instruction":"",
         "_isVisibleBeforeCompletion": true,
+        "_assessmentId": "Assessment 1",
         "_graphic": {
             "alt": "alt text",
-            "_src": "http://cdn.lipstiq.com/wp-content/uploads/2013/07/minions-film.jpg"
+            "_src": ""
         },
         "_bands": [
           {
