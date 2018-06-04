@@ -130,15 +130,23 @@ define([
         },
 
         setupEventListeners: function() {
+          // Check if specific assessment is being shown or all assessments
+          if(this.model.has("_assessmentId") && this.model.get("_assessmentId") !== "") {
             this.listenTo(Adapt, 'assessments:complete', this.onAssessmentsComplete);
+          } else {
             this.listenTo(Adapt, 'assessment:complete', this.onAssessmentComplete);
-            this.listenToOnce(Adapt, 'remove', this.onRemove);
+          }
+          this.listenToOnce(Adapt, 'remove', this.onRemove);
         },
 
         removeEventListeners: function() {
+          // Check if specific assessment is being shown or all assessments
+          if(this.model.has("_assessmentId") && this.model.get("_assessmentId") !== "") {
             this.stopListening(Adapt, 'assessments:complete', this.onAssessmentsComplete);
+          } else {
             this.stopListening(Adapt, 'assessment:complete', this.onAssessmentComplete);
-            this.stopListening(Adapt, 'remove', this.onRemove);
+          }
+          this.stopListening(Adapt, 'remove', this.onRemove);
         },
 
         onAssessmentsComplete: function(state) {
