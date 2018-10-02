@@ -1,0 +1,18 @@
+    {
+        "_id":"c-30",
+        "_parentId":"b-15",
+        "_type":"component",
+        "_component":"beforeafter",
+        "_classes":"",
+        "_layout":"left",
+        "title":"Here is a before and after object",
+        "displayTitle":"Here is a before and after object",
+        "body":"Hi everybody!",
+        "instruction":"",
+        "_beforeafter": {
+            "alt": "alt text",
+            "after": "https://github.com/adaptlearning/documentation/raw/master/04_wiki_assets/adapt_framework/adapt-logo_208x200.gif",
+            "before": "http://minionslovebananas.com/images/check-in-minion.jpg",
+            "attribution":"Copyright © 2015"
+        }
+    }
