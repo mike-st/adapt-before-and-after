@@ -10,9 +10,10 @@
         "body":"Hi everybody!",
         "instruction":"",
         "_beforeafter": {
+            "before": "http://egegorgulu.com/assets/img/beforeafter/before.jpg",
+            "beforealt": "alt text",
+            "after": "http://egegorgulu.com/assets/img/beforeafter/after.jpg",
             "alt": "alt text",
-            "after": "https://github.com/adaptlearning/documentation/raw/master/04_wiki_assets/adapt_framework/adapt-logo_208x200.gif",
-            "before": "http://minionslovebananas.com/images/check-in-minion.jpg",
-            "attribution":"Copyright © 2015"
+            "attribution":"Copyright © 2019"
         }
     }
