@@ -11,7 +11,7 @@
         "instruction":"",
         "_beforeafter": {
             "before": "http://egegorgulu.com/assets/img/beforeafter/before.jpg",
-            "beforealt": "alt text",
+            "altbefore": "alt text",
             "after": "http://egegorgulu.com/assets/img/beforeafter/after.jpg",
             "alt": "alt text",
             "attribution":"Copyright © 2019"
