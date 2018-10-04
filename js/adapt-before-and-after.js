@@ -96,6 +96,7 @@ define(function(require) {
                 dragElement.addClass('draggable');
                 resizeElement.addClass('resizable');
 
+
                 // Check if it's a mouse or touch event and pass along the correct value
                 var startX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
 
@@ -112,28 +113,33 @@ define(function(require) {
                 // Calculate the dragging distance on mousemove.
                 dragElement.parents().on("mousemove touchmove", function (e) {
 
-                  // Check if it's a mouse or touch event and pass along the correct value
-                  var moveX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
+                  if (e.pageX >= 1) {
+                    // Check if it's a mouse or touch event and pass along the correct value
+                    var moveX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
 
-                  leftValue = moveX + posX - dragWidth;
+                    leftValue = moveX + posX - dragWidth;
 
-                  // Prevent going off limits
-                  if (leftValue < minLeft) {
-                    leftValue = minLeft;
-                  } else if (leftValue > maxLeft) {
-                    leftValue = maxLeft;
+                    // Prevent going off limits
+                    if (leftValue <= minLeft) {
+                      leftValue = minLeft;
+                    } else if (leftValue >= maxLeft) {
+                      leftValue = maxLeft;
+                    }
+
+                    // Translate the handle's left value to masked divs width.
+                    widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + '%';
+
+                    // Set the new values for the slider and the handle. 
+                    // Bind mouseup events to stop dragging.
+                    $('.draggable').css('left', widthValue).on('mouseup touchend touchcancel', function () {
+                      $(this).removeClass('draggable');
+                      resizeElement.removeClass('resizable');
+                    });
+                    $('.resizable').css('width', widthValue);
+                  }else{
+                    //Mouse position at 0 do nothing
                   }
 
-                  // Translate the handle's left value to masked divs width.
-                  widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + '%';
-
-                  // Set the new values for the slider and the handle. 
-                  // Bind mouseup events to stop dragging.
-                  $('.draggable').css('left', widthValue).on('mouseup touchend touchcancel', function () {
-                    $(this).removeClass('draggable');
-                    resizeElement.removeClass('resizable');
-                  });
-                  $('.resizable').css('width', widthValue);
                 }).on('mouseup touchend touchcancel', function () {
                   dragElement.removeClass('draggable');
                   resizeElement.removeClass('resizable');
