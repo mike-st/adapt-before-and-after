@@ -111,7 +111,7 @@ define(function(require) {
                 maxLeft = containerOffset + containerWidth - dragWidth - 0;
 
                 // Calculate the dragging distance on mousemove.
-                dragElement.parents().on("mousemove touchmove", function (e) {
+                dragElement.parents().on("mousemove", function (e) {
 
                   if (e.pageX >= 1) {
                     // Check if it's a mouse or touch event and pass along the correct value
@@ -131,7 +131,7 @@ define(function(require) {
 
                     // Set the new values for the slider and the handle. 
                     // Bind mouseup events to stop dragging.
-                    $('.draggable').css('left', widthValue).on('mouseup touchend touchcancel', function () {
+                    $('.draggable').css('left', widthValue).on('mouseup', function () {
                       $(this).removeClass('draggable');
                       resizeElement.removeClass('resizable');
                     });
@@ -140,7 +140,37 @@ define(function(require) {
                     //Mouse position at 0 do nothing
                   }
 
-                }).on('mouseup touchend touchcancel', function () {
+                }).on('mouseup', function () {
+                  dragElement.removeClass('draggable');
+                  resizeElement.removeClass('resizable');
+                });
+                // Calculate the dragging distance on mousemove.
+                dragElement.parents().on("touchmove", function (e) {
+
+                    // Check if it's a mouse or touch event and pass along the correct value
+                    var moveX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
+
+                    leftValue = moveX + posX - dragWidth;
+
+                    // Prevent going off limits
+                    if (leftValue <= minLeft) {
+                      leftValue = minLeft;
+                    } else if (leftValue >= maxLeft) {
+                      leftValue = maxLeft;
+                    }
+
+                    // Translate the handle's left value to masked divs width.
+                    widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + '%';
+
+                    // Set the new values for the slider and the handle. 
+                    // Bind mouseup events to stop dragging.
+                    $('.draggable').css('left', widthValue).on('touchend touchcancel', function () {
+                      $(this).removeClass('draggable');
+                      resizeElement.removeClass('resizable');
+                    });
+                    $('.resizable').css('width', widthValue);
+
+                }).on('touchend touchcancel', function () {
                   dragElement.removeClass('draggable');
                   resizeElement.removeClass('resizable');
                 });
