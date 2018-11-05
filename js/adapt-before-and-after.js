@@ -17,6 +17,17 @@ define(function(require) {
             this.beforeAfterReveal();
         },
 
+         events: function() {
+            return Adapt.device.touch == true ? {
+                'inview': 'inview',
+                'touchmove .handle' : 'sliderHandle'
+            } : {
+                'inview': 'inview',
+                'mousedown .handle' : 'sliderHandle',
+                'keydown .handle' : 'sliderHandle'
+            }
+        },
+
         // Used to check if the beforeafter should reset on revisit
         checkIfResetOnRevisit: function() {
             var isResetOnRevisit = this.model.get('_isResetOnRevisit');
@@ -40,10 +51,14 @@ define(function(require) {
 
                 if (this._isVisibleTop && this._isVisibleBottom) {
                     this.$('.component-widget').off('inview');
-                    this.setCompletionStatus();
+                    //this.setCompletionStatus();
                 }
 
             }
+        },
+
+        sliderHandle: function (event) {
+            this.setCompletionStatus();
         },
 
         remove: function() {
