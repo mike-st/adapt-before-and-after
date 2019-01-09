@@ -83,6 +83,15 @@
           "translatable": true
         }
       }
+    },
+    "bottomText": {
+      "type": "string",
+      "required": false,
+      "inputType": "TextArea",
+      "title": "Bottom Text",
+      "default": "",
+      "validators": [],
+      "help": "Enter bottom text which is inserted under the interactive element"
     }
   }
 }
