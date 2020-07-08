@@ -13,6 +13,6 @@ Press and hold on the circular button while moving left and right to reveal the 
 ## Limitations
  
 <p><strong>DOES NOT WORK WITH FRAMEWORK VERSION 5</strong>. Please go to the Framework 5 version of this component on my other github site...</p>
-<p>[github.com/zarek3333/adapt-before-and-after](https://github.com/zarek3333/adapt-before-and-after)</p>
+[github.com/zarek3333/adapt-before-and-after](https://github.com/zarek3333/adapt-before-and-after)
 
 Use the example.json to see how the Component works.
